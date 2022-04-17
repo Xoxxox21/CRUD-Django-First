@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="/tambah_user/" method="post">
+                    {% if pesan %}
+                        <div class="alert alert-success">{{ pesan }}</div>
+                    {% endif%}
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary"> Tambah</button>
+                    <a href="/data" class="btn btn-danger">Kembali</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
